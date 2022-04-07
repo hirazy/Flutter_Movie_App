@@ -4,6 +4,7 @@ import 'package:movie_app/l10n/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movie_app/provider/locale_provider.dart';
+import 'package:movie_app/screen/splash/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 Future main() async {
@@ -22,27 +23,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
-    create: (context) => LocaleProvider(),
-    builder: (context, child){
+      create: (context) => LocaleProvider(),
+      builder: (context, child) {
+        final provider = Provider.of<LocaleProvider>(context);
 
-      final provider = Provider.of<LocaleProvider>(context);
-
-      return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        supportedLocales: L10n.all,
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate
-        ],
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      );
-    } 
-  );
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          supportedLocales: L10n.all,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate
+          ],
+          home: SplashScreen(),
+        );
+      });
 }
 
 class MyHomePage extends StatefulWidget {
@@ -65,15 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
-
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
@@ -86,26 +82,17 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               child: Text(
                 AppLocalizations.of(context)!.language! ?? 'hi',
-                style: TextStyle(
-                  color: Colors.black
-                ),
+                style: TextStyle(color: Colors.black),
               ),
             ),
-
-            Row(
-              children: [
-                const Text(
-                  ""
+            Row(children: [
+              const Text(""),
+              InkWell(
+                child: Container(
+                  child: RaisedButton(onPressed: () {}),
                 ),
-                InkWell(
-                  child: Container(
-                    child: RaisedButton(onPressed: (){
-                      
-                    }),
-                  ),
-                )
-              ]
-            )
+              )
+            ])
           ],
         ),
       ),
