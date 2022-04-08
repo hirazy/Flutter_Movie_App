@@ -41,7 +41,7 @@ class HomeScreenState extends State<HomeScreen> with KeepAliveParentDataMixin {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 20, right: 10),
+            padding: const EdgeInsets.only(left: 20, right: 10),
             child: Row(
               children: const <Widget>[
                 Expanded(
@@ -64,7 +64,6 @@ class HomeScreenState extends State<HomeScreen> with KeepAliveParentDataMixin {
           MovieListView(
             type: MovieListType.topRated,
             onClickItem: (movieId) => {
-
               _navigateToMovieDetail(context, movieId)
             },
           )

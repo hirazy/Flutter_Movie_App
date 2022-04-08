@@ -76,7 +76,7 @@ class MovieListViewState extends State<MovieListView> {
         elevation: 10,
         margin: EdgeInsets.only(left: isFirst ? 20 : 10, right: 10, bottom: 20),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+            borderRadius: const BorderRadius.all(Radius.circular(10))),
         child: Image.network('https://image.tmdb.org/t/p/w500$imagePath',
           fit: BoxFit.cover,
           width: itemHeight * 4 / 3,

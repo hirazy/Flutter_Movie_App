@@ -1,3 +1,6 @@
 class SharePreferences{
 
+  setTheme(){
+
+  }
 }
