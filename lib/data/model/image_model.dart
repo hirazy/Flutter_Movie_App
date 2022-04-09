@@ -24,7 +24,7 @@ class ImageModel{
   ImageModel.fromJson(Map<String, dynamic> json){
     aspect_ratio = json["aspect_ratio"];
     height = json["height"];
-    iso_639_1 = json["iso_639_1"];
+    iso_639_1 = json["iso_639_1"] ?? "";
     file_path = json["file_path"];
     vote_average = json["vote_average"];
     vote_count = json["vote_count"];

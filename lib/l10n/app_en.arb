@@ -15,5 +15,7 @@
            "type": "String"
          }
       }
-    }
+    },
+    "myList": "My List",
+    "popular": "Popular List"
 }

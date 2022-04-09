@@ -1,5 +1,21 @@
 {
-    "language": "मानक हिन्दी",
-    "helloWorld": "नमस्ते दुनिया!",
-    "hello": "नमस्ते {username}"
+    "language": "English",
+    "@language":{
+        "description": "The current Language"
+    },
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "description": "A programmer greeting"
+    },
+    "hello": "Hello {username}",
+    "@hello": {
+        "description": "A welcome message",
+        "placeholders": {
+            "username": {
+                "type": "String"
+            }
+        }
+    },
+    "myList": "My List",
+    "popular": "Popular List"
 }

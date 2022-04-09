@@ -3,7 +3,7 @@ import '../base_bloc.dart';
 
 class MovieImageBloc extends BaseBloc<MovieImageModel> {
 
-  // Observable<MovieImageModel> get movieImages => fetcher.stream;
+  Stream<MovieImageModel> get movieImages => fetcher.stream;
 
   fetchMovieImages(int movieId) async {
     MovieImageModel itemModel = await repository.fetchMovieImages(movieId);

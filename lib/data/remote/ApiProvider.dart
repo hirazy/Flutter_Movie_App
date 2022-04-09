@@ -51,7 +51,7 @@ class ApiProvider {
         .get("$_baseURL/$movieId?api_key=$_apiKey");
     // print(response.body.toString());
     if (response.statusCode == 200) {
-      return MovieDetailModel.fromJson(json.decode(response.data));
+      return MovieDetailModel.fromJson(response.data);
     } else {
       throw Exception('Failed to load post');
     }
@@ -63,7 +63,7 @@ class ApiProvider {
         .get("$_baseURL/$movieId/images?api_key=$_apiKey");
     // print(response.body.toString());
     if (response.statusCode == 200) {
-      return MovieImageModel.fromJson(json.decode(response.data));
+      return MovieImageModel.fromJson(response.data);
     } else {
       throw Exception('Failed to load post');
     }

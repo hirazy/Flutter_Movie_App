@@ -1,14 +1,14 @@
 import 'package:movie_app/data/model/base_model.dart';
 
 class ProductionCompanyModel extends BaseModel {
-  late String id;
+  late int id;
   late String logo_path;
   late String name;
   late String origin_country;
 
   ProductionCompanyModel.fromJson(Map<String, dynamic> json){
     id = json["id"];
-    logo_path = json["logo_path"];
+    logo_path = json["logo_path"] ?? "";
     name = json["name"];
     origin_country = json["origin_country"];
   }

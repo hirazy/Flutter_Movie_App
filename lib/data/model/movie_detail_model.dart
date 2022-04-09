@@ -33,14 +33,14 @@ class MovieDetailModel extends BaseModel{
   late String status;
   late String tagline;
   late String title;
-  late String video;
+  late bool video;
   late double vote_average;
   late int vote_count;
 
   MovieDetailModel.fromJson(Map<String, dynamic> parsedJson) {
     adult = parsedJson['adult'];
     backdrop_path = parsedJson['backdrop_path'];
-    belongs_to_collection = BelongToCollectionModel.fromJson(parsedJson['belongs_to_collection']);
+    belongs_to_collection = BelongToCollectionModel.fromJson(parsedJson['belongs_to_collection'])  ;
     budget = parsedJson['budget'];
     genres = GenreModel.fromJsonArray(parsedJson["genres"])!;
     homepage = parsedJson['homepage'];
@@ -56,7 +56,7 @@ class MovieDetailModel extends BaseModel{
     release_date = parsedJson['release_date'];
     revenue = parsedJson['revenue'];
     runtime = parsedJson['runtime'];
-    spoken_languages = SpokenLanguage.fromJsonArray(parsedJson['spoken_languages']);
+    spoken_languages = SpokenLanguage.fromJsonArray(parsedJson['spoken_languages'])!;
     status = parsedJson['status'];
     tagline = parsedJson['tagline'];
     title = parsedJson['title'];

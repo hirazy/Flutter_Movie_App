@@ -8,19 +8,20 @@ import '../../data/model/item_model.dart';
 class MovieListView extends StatefulWidget {
 
   String type;
-  dynamic onClickItem;
+  final Function(int movieId) onClickItem;
 
   MovieListView({
+    Key? key,
     required this.type,
-    required this.onClickItem});
+    required this.onClickItem}): super(key: key);
 
   @override
-  MovieListViewState createState() {
-    return MovieListViewState();
+  _MovieListViewState createState() {
+    return _MovieListViewState();
   }
 }
 
-class MovieListViewState extends State<MovieListView> {
+class _MovieListViewState extends State<MovieListView> {
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +59,18 @@ class MovieListViewState extends State<MovieListView> {
           var item = snapshot.data!.results[index];
 
           return InkWell(
-            /// onTap: widget.onClickItem(index),
             child: _buildItem(
                 item.poster_path,
                 item.backdrop_path,
                 width / 4,
                 index == 0),
+            onTap: () {
+              if (widget.onClickItem != null) {
+                widget.onClickItem(item.id);
+              } else {
+                debugPrint("No handle");
+              }
+            },
           );
         },),
     );

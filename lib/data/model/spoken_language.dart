@@ -17,7 +17,7 @@ class SpokenLanguage {
     return json;
   }
 
-  static fromJsonArray(parsedJson) {
+  static List<SpokenLanguage>? fromJsonArray(List parsedJson) {
     return parsedJson?.map((item) {
       return SpokenLanguage.fromJson(item);
     })?.toList();
